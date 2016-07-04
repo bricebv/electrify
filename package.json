@@ -1,6 +1,6 @@
 {
   "name": "electrify",
-  "version": "2.1.4",
+  "version": "2.1.5",
   "main": "lib/index.js",
   "bin": {
     "electrify": "bin/cli.js"
@@ -13,12 +13,12 @@
   "license": "MIT",
   "dependencies": {
     "commander": "^2.8.1",
-    "electron-packager": "^5.1.1",
-    "electron-prebuilt": "^0.35.4",
-    "lodash": "^3.10.1",
+    "electron-packager": "7.2.0",
+    "electron-prebuilt": "1.2.5",
+    "lodash": "4.14.0",
     "server-destroy": "^1.0.1",
-    "shelljs": "^0.5.3",
-    "sockjs": "^0.3.15"
+    "shelljs": "0.7.0",
+    "sockjs": "0.3.17"
   },
   "devDependencies": {
     "codeclimate-test-reporter": "^0.1.1",
