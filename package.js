@@ -1,4 +1,4 @@
-var VERSION = '2.1.4';
+var VERSION = '2.1.5';
 
 Package.describe({
   name: 'arboleya:electrify',
@@ -9,7 +9,7 @@ Package.describe({
 });
 
 Npm.depends({
-  'sockjs-client': '1.0.3'
+  'sockjs-client': '1.1.1'
 });
 
 Package.onUse(function(api) {
