@@ -114,7 +114,7 @@ function electrify(create) {
     console.error('input folder doesn\'t exist\n  ' + program.input);
     process.exit();
   }
-  
+
   input = program.input || process.cwd();
 
   if(!is_meteor_app()) {
@@ -138,7 +138,7 @@ function electrify(create) {
 
       // if its not installed, install it
       var pwd = shell.pwd();
-      
+
       shell.cd(input);
       shell.exec('meteor add arboleya:electrify');
       shell.cd(pwd);
@@ -161,7 +161,7 @@ function has_local_electrify(){
     console.error('input folder doesn\'t exist\n  ' + program.input);
     process.exit();
   }
-  
+
   var input = program.input || process.cwd();
 
   // validates meteor project
@@ -195,6 +195,7 @@ function parse_packager_options(){
     '--icon',
     '--app-bundle-id',
     '--app-version',
+    '--app-copyright',
     '--build-version',
     '--cache',
     '--helper-bundle-id',
@@ -203,8 +204,25 @@ function parse_packager_options(){
     '--overwrite',
     '--asar',
     '--asar-unpack',
+    '--asar-unpack-dir',
     '--sign',
-    '--version-string'
+    '--version-string.CompanyName',
+    '--version-string.FileDescription',
+    '--version-string.OriginalFilename',
+    '--version-string.ProductName',
+    '--version-string.InternalName',
+    '--deref-symlinks',
+    '--download.cache',
+    '--download.mirror',
+    '--download.strictSSL',
+    '--tmpdir',
+    '--version',
+    '--app-bundle-id',
+    '--app-category-type',
+    '--extend-info',
+    '--extra-resource',
+    '--helper-bundle-id',
+    '--osx-sign'
   ];
 
   var dashdash = process.argv.indexOf('--');
@@ -219,11 +237,11 @@ function parse_packager_options(){
       var parts = arg.split('=');
       var key = parts[0];
       var val = 'undefined' == typeof(parts[1]) ? true : parts[1];
-    
+
       if(~names.indexOf(key))
         options[key.slice(2)] = val;
       else
-        log('Option `' + key + '` doens\'t exist, ignoring it');
+        log('Option `' + key + '` doesn\'t exist, ignoring it');
     });
   }
 
